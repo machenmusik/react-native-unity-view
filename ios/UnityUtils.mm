@@ -152,8 +152,12 @@ static BOOL _isUnityReady = NO;
 
         [UnityUtils listenAppState];
 
+/*
         // Always keep RN window in top
         controller.window.windowLevel = prevKeyWindow.windowLevel - 1;
+ */
+        // Having trouble punching holes in RN, so put Unity on top
+        controller.window.windowLevel = prevKeyWindow.windowLevel + 1;
         // Make RN window the key window again
         [prevKeyWindow makeKeyWindow];
     });
